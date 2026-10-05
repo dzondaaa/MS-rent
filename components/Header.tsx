@@ -25,7 +25,7 @@ export default function Header() {
       <div className="container header-inner">
         <Link href="/" className="logo" aria-label="MS-rent – domů">
           <Image
-            src="/assets/ms-profitech-light.png"
+            src="/assets/ms-profitech-light.webp"
             alt=""
             width={608}
             height={410}
@@ -33,7 +33,7 @@ export default function Header() {
             className="brand-logo brand-logo-light"
           />
           <Image
-            src="/assets/ms-profitech-dark.png"
+            src="/assets/ms-profitech-dark.webp"
             alt=""
             width={608}
             height={410}

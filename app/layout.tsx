@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description: seo.description,
     images: [
       {
-        url: "/og-cover.jpg",
+        url: "/og-cover.webp",
         width: 1200,
         height: 630,
         alt: "MS-rent – půjčovna stavebních strojů v Děčíně"

@@ -35,7 +35,7 @@ export default function HomePage() {
           </div>
 
           <div className="hero-image" data-reveal="right">
-            <Image src="/assets/minibagr.png" alt="Pásový minibagr" fill priority sizes="(max-width: 800px) 100vw, 50vw" />
+            <Image src="/assets/minibagr.webp" alt="Pásový minibagr" fill priority sizes="(max-width: 800px) 100vw, 50vw" />
             <div className="hero-image-label">
               <small>K pronájmu</small>
               <strong>Pásový minibagr</strong>
