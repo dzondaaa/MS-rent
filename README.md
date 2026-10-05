@@ -1,6 +1,6 @@
-# MS-rent – Next.js školní projekt (upravený design)
+# MS-rent
 
-Web je schválně udělaný tak, aby vypadal hezky a moderně, ale kód zůstal přehledný pro školní projekt. Nepoužívá Tailwind ani Framer Motion. Animace jsou udělané hlavně pomocí CSS a malého `IntersectionObserver` skriptu.
+Hotový Next.js projekt pro půjčovnu stavebních strojů MS-rent v Děčíně.
 
 ## Spuštění
 
@@ -9,66 +9,50 @@ npm install
 npm run dev
 ```
 
-Potom otevři `http://localhost:3000`.
-
-## Co je v projektu
-
-- více stránek přes Next.js App Router
-- světlý / tmavý režim včetně správné varianty MS ProfiTech loga
-- animace při načtení stránky
-- animace při scrollování
-- hover animace karet a tlačítek
-- animované mobilní menu
-- animované FAQ
-- vlastní detail každého stroje
-- připravený kontaktní formulář
-- API route pro formulář
-- Resend připravený pro skutečné posílání e-mailů
-- `robots.ts`, `sitemap.ts` a `llms.txt`
-
-## Kontaktní údaje
-
-Uprav v:
-
-`lib/site.ts`
+Web poběží na `http://localhost:3000`.
 
 ## Kontaktní formulář
 
-Formulář volá:
-
-`app/api/contact/route.ts`
-
-Bez API klíče funguje v DEMO režimu. Po odeslání se data vypíšou do terminálu a stránka ukáže potvrzení.
-
-Pro skutečný e-mail:
-
-1. Zkopíruj `.env.example` na `.env.local`.
-2. Vytvoř si API klíč u Resend.
-3. Doplň proměnné:
+Projekt používá Nodemailer přes SMTP. Vytvoř `.env.local` podle `.env.example`:
 
 ```env
-RESEND_API_KEY=re_xxxxxxxxxxxxxxxxx
-CONTACT_TO_EMAIL=tvuj@email.cz
-CONTACT_FROM_EMAIL=MS-rent <web@tvojedomena.cz>
+SMTP_HOST=smtp.websupport.cz
+SMTP_PORT=465
+SMTP_SECURE=true
+SMTP_USER=info@ms-rent.cz
+SMTP_PASS=HESLO_K_EMAILU
+CONTACT_TO_EMAIL=info@ms-rent.cz
 ```
 
-`.env.local` nedávej na GitHub.
+Na Vercelu nastav stejné hodnoty v **Project → Settings → Environment Variables**. `SMTP_PASS` vždy nastav jako Secret.
 
-## Jak fungují animace
+## Kontakt na webu
 
-`components/ScrollReveal.tsx` najde prvky s `data-reveal` a při scrollování jim přidá třídu `is-visible`.
+Zobrazovaný e-mail, telefon a další údaje jsou v `lib/site.ts`.
 
-Například:
+Telefon je zatím prázdný, takže se na webu nezobrazuje. Až ho budeš znát, doplň `phone` a `phoneHref`.
 
-```tsx
-<div data-reveal="up">Obsah</div>
+## SEO / optimalizace
+
+Projekt už obsahuje:
+
+- `app/robots.ts` → `/robots.txt`
+- `app/sitemap.ts` → `/sitemap.xml`
+- `app/manifest.ts` → `/manifest.webmanifest`
+- `public/llms.txt`
+- `public/.well-known/security.txt`
+- favicon + PWA ikony
+- `public/og-cover.jpg` pro Open Graph / sociální sítě
+- metadata, canonical URL a strukturovaná data
+- bezpečnostní HTTP hlavičky
+- optimalizaci obrázků přes Next.js
+
+## Nasazení na GitHub / Vercel
+
+```bash
+git add .
+git commit -m "MS-rent ready for production"
+git push
 ```
 
-Směry jsou `up`, `left` a `right`.
-
-Další animace jsou normálně v `app/globals.css`, takže se dají snadno upravit.
-
-
-## Loga pro režimy
-
-Header automaticky používá `public/assets/ms-profitech-light.png` ve světlém režimu a `public/assets/ms-profitech-dark.png` v tmavém režimu. Footer je schválně kompaktní a DzondaDesign zůstává uprostřed.
+Vercel pak automaticky vytvoří nový deployment.

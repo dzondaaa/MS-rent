@@ -1,12 +1,26 @@
 # MS-rent
 
-MS-rent je půjčovna stavebních strojů v Děčíně a okolí.
+> MS-rent je půjčovna stavebních strojů v Děčíně a okolí provozovaná společností MS ProfiTech s.r.o.
 
-## Nabídka
-- Pásový minibagr
-- Pásový dumper
-- Vibrační deska
-- Vibrační pěch
+## Hlavní stránky
 
-## Zaměření
-Pronájem techniky pro výkopy, hutnění a převoz materiálu.
+- [Domů](https://ms-rent.cz/): Přehled půjčovny a nabídky stavební techniky.
+- [Stroje](https://ms-rent.cz/stroje): Kompletní nabídka strojů k pronájmu.
+- [O nás](https://ms-rent.cz/o-nas): Informace o půjčovně MS-rent.
+- [FAQ](https://ms-rent.cz/faq): Časté otázky k pronájmu.
+- [Kontakt](https://ms-rent.cz/kontakt): Kontaktní údaje a nezávazná poptávka.
+
+## Stroje k pronájmu
+
+- [Pásový minibagr](https://ms-rent.cz/stroje/minibagr): Výkopy, drenáže, základy a terénní práce.
+- [Pásový dumper](https://ms-rent.cz/stroje/dumper): Převoz zeminy, suti, štěrku a stavebního materiálu.
+- [Vibrační deska](https://ms-rent.cz/stroje/vibracni-deska): Hutnění štěrku, podkladů a ploch pod dlažbu.
+- [Vibrační pěch](https://ms-rent.cz/stroje/vibracni-pech): Hutnění zeminy v úzkých a hůře přístupných místech.
+
+## Lokalita
+
+Děčín a okolí, Česká republika.
+
+## Kontakt
+
+Aktuální kontaktní údaje jsou na https://ms-rent.cz/kontakt.

@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import MachineCard from "@/components/MachineCard";
 import FaqList from "@/components/FaqList";
 import { machines } from "@/lib/machines";
+import { seo } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  description: seo.description
+};
 
 export default function HomePage() {
   return (
@@ -45,7 +52,7 @@ export default function HomePage() {
               <span className="eyebrow">Naše technika</span>
               <h2>Stroje k pronájmu</h2>
             </div>
-            <p>Každý stroj má vlastní stránku, kde najdete k čemu se hodí a proč si ho půjčit.</p>
+            <p>U každého stroje najdete, na co se hodí a proč si ho půjčit.</p>
           </div>
           <div className="machine-grid">
             {machines.map((machine) => <MachineCard key={machine.slug} machine={machine} />)}

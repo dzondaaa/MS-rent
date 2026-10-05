@@ -1,10 +1,25 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
+import { machines } from "@/lib/machines";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = { title: "Kontakt" };
+export const metadata: Metadata = {
+  title: "Kontakt",
+  description: "Kontaktujte MS-rent a pošlete nezávaznou poptávku na pronájem stavebního stroje v Děčíně.",
+  alternates: { canonical: "/kontakt" }
+};
 
-export default function ContactPage({ searchParams }: { searchParams?: { stroj?: string } }) {
+type ContactPageProps = {
+  searchParams: Promise<{ stroj?: string | string[] }>;
+};
+
+export default async function ContactPage({ searchParams }: ContactPageProps) {
+  const query = await searchParams;
+  const requestedMachine = Array.isArray(query.stroj) ? query.stroj[0] : query.stroj;
+  const defaultMachine = machines.some((machine) => machine.name === requestedMachine)
+    ? requestedMachine || ""
+    : "";
+
   return (
     <>
       <section className="page-head">
@@ -21,11 +36,11 @@ export default function ContactPage({ searchParams }: { searchParams?: { stroj?:
             <div className="contact-info" data-reveal="left">
               <h2>MS-rent</h2>
               <p><b>Lokalita:</b><br />{site.area}</p>
-              <p><b>Telefon:</b><br /><a href={`tel:${site.phoneHref}`}>{site.phone}</a></p>
+              {site.phone && <p><b>Telefon:</b><br /><a href={`tel:${site.phoneHref}`}>{site.phone}</a></p>}
               <p><b>E-mail:</b><br /><a href={`mailto:${site.email}`}>{site.email}</a></p>
             </div>
 
-            <ContactForm defaultMachine={searchParams?.stroj || ""} />
+            <ContactForm defaultMachine={defaultMachine} />
           </div>
 
           <div className="contact-map" data-reveal="up">
