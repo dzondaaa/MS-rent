@@ -1,0 +1,12 @@
+# MS-rent
+
+MS-rent je půjčovna stavebních strojů v Děčíně a okolí.
+
+## Nabídka
+- Pásový minibagr
+- Pásový dumper
+- Vibrační deska
+- Vibrační pěch
+
+## Zaměření
+Pronájem techniky pro výkopy, hutnění a převoz materiálu.
